@@ -118,25 +118,25 @@ if (isset($_GET['msg'])) {
                         <?php if ($result && $result->num_rows > 0):
                             $counter = 1;
                             while ($row = $result->fetch_assoc()): ?>
-                        <tr>
-                            <td><?= $counter++ ?></td>
-                            <td><?= htmlspecialchars($row['firstname']) ?></td>
-                            <td><?= htmlspecialchars($row['lastname']) ?></td>
-                            <td><?= htmlspecialchars($row['email']) ?></td>
-                            <td><?= htmlspecialchars($row['course']) ?></td>
-                            <td><?= htmlspecialchars($row['year']) ?></td>
-                            <td class="text-center">
-                                <a href="update.php?id=<?= $row['id'] ?>"
-                                   class="btn btn-sm btn-warning me-1">Edit</a>
-                                <a href="delete.php?id=<?= $row['id'] ?>"
-                                   class="btn btn-sm btn-danger"
-                                   onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
-                            </td>
-                        </tr>
-                        <?php endwhile; else: ?>
-                        <tr>
-                            <td colspan="7" class="text-center text-muted py-4">No students found.</td>
-                        </tr>
+                                <tr>
+                                    <td><?= $counter++ ?></td>
+                                    <td><?= htmlspecialchars($row['firstname']) ?></td>
+                                    <td><?= htmlspecialchars($row['lastname']) ?></td>
+                                    <td><?= htmlspecialchars($row['email']) ?></td>
+                                    <td><?= htmlspecialchars($row['course']) ?></td>
+                                    <td><?= htmlspecialchars($row['year']) ?></td>
+                                    <td class="text-center">
+                                        <a href="update.php?id=<?= $row['id'] ?>"
+                                        class="btn btn-sm btn-warning me-1">Edit</a>
+                                        <a href="delete.php?id=<?= $row['id'] ?>"
+                                        class="btn btn-sm btn-danger"
+                                        onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
+                                    </td>
+                                </tr>
+                            <?php endwhile; else: ?>
+                            <tr>
+                                <td colspan="7" class="text-center text-muted py-4">No students found.</td>
+                            </tr>
                         <?php endif; ?>
                     </tbody>
                 </table>
